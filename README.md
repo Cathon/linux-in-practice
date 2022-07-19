@@ -1,46 +1,56 @@
-[［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識](http://gihyo.jp/book/2018/978-4-7741-9607-7)実験プログラム
+本项目内容为 [Linux 是怎样工作的 实验X图解 直击Linux核心工作原理](https://www.ituring.com.cn/book/2867) 的实验程序
 
-# おまけ
+# 说明
 
-Ubuntu20.04において動作する、本書において書かれたCプログラムをGoやPythonに移植して、かつ、コメントを日本語にしたものを各章のmiscディレクトリに入れています。一部についてはグラフ描画もしてくれるように変更しました。
+本项目中的代码以 Ubuntu 20.04 为运行环境，将书中所写的 C 程序移植到 Go 和 Python 中，同时对一部分代码进行了修改，使其也能进行图表绘制。
 
-必要なパッケージは以下の通り。
+必须依赖的软件包如下所示：
 
 binutils, build-essential, golang, python3-matplotlib, python3-pil, fonts-takao
 
-## 2章
+## 第 2 章
 
-- [hello.go](02-syscall-and-non-kernel-os/misc/hello.go): [hello.c](02-syscall-and-non-kernel-os/hello.c)に対応するGoプログラム。`go build hello.go`でビルドできる
-- [inf-loop](02-syscall-and-non-kernel-os/misc/inf-loop): [loop.c](02-syscall-and-non-kernel-os/loop.c)に対応するPythonプログラム
-- [syscall-inf-loop](02-syscall-and-non-kernel-os/misc/syscall-inf-loop): [ppidloop.c](02-syscall-and-non-kernel-os/ppidloop.c)に対応するPythonプログラム
+- [hello.py](02-syscall-and-non-kernel-os/hello.py)
+- [hello.go](02-syscall-and-non-kernel-os/misc/hello.go): 是 [hello.c](02-syscall-and-non-kernel-os/hello.c) 对应的 Go 语言实现，可以使用 `go build hello.go` 命令进行编译。
+- [inf-loop](02-syscall-and-non-kernel-os/misc/inf-loop): 是 [loop.c](02-syscall-and-non-kernel-os/loop.c) 对应的 Python 程序。
+- [syscall-inf-loop](02-syscall-and-non-kernel-os/misc/syscall-inf-loop): 是 [ppidloop.c](02-syscall-and-non-kernel-os/ppidloop.c) 对应的 Python 程序。
 
-## 3章
+## 第 3 章
 
-- [fork](03-process-management/misc/fork): [fork.c](03-process-management/fork.c)に対応するPythonプログラム
-- [fork-and-exec](03-process-management/misc/fork-and-exec): [fork-and-exec.c](03-process-management/fork-and-exec.c)に対応するPythonプログラム
+- [fork](03-process-management/misc/fork): 是 [fork.c](03-process-management/fork.c) 对应的 Python 程序。
+- [fork-and-exec](03-process-management/misc/fork-and-exec): 是 [fork-and-exec.c](03-process-management/fork-and-exec.c) 对应的 Python 程序。
 
-## 4章
+## 第 4 章
 
-- [sched](04-process-scheduler/misc/sched): [sched.c](04-process-scheduler/sched.c)に対応するPythonプログラム。結果をグラフ化にして"sched-<並列度>.jpg"に保存。
+- [sched](04-process-scheduler/misc/sched): 是 [sched.c](04-process-scheduler/sched.c) 对应的 Python 程序，并将结果以 "sched-<并发数>.jpg" 的文件名保存。
+- [sched_nice.c](04-process-scheduler/sched_nice.c)
 
-以下、1CPU上でschedプログラムを動かした結果を示すグラフです。順番に1並列、2並列、3並列のものです。
+以下是在单个 CPU 上运行 sched 程序并进行绘图的结果。分别是1个进程、2个进程并发、3个进程并发的结果。
 
-![sched-1.jpg](04-process-scheduler/misc/sched-1.jpg)
-![sched-2.jpg](04-process-scheduler/misc/sched-2.jpg)
-![sched-3.jpg](04-process-scheduler/misc/sched-3.jpg)
+- ![sched-1.jpg](04-process-scheduler/misc/sched-1.jpg)
+- ![sched-2.jpg](04-process-scheduler/misc/sched-2.jpg)
+- ![sched-3.jpg](04-process-scheduler/misc/sched-3.jpg)
 
-## 5章
+## 第 5 章
 
-- [cow](05-memory-management/misc/cow): [cow.c](05-memory-management/cow.c)に対応するPythonプログラム
-- [demand-paging](05-memory-management/misc/demand-paging): [demand-paging.c](05-memory-management/demand-paging.c)に対応するPythonプログラム
-- [mmap.go](05-memory-management/misc/mmap.go): [mmap.c](05-memory-management/mmap.c)に対応するGoプログラム。`go build mmap.go`でビルドできる
-- [filemap.go](05-memory-management/misc/filemap.go): [filemap.c](05-memory-management/filemap.c)に対応するGoプログラム。`go build filemap.go`でビルドできる
-- [segv.go](05-memory-management/misc/segv.go): [segv.c](05-memory-management/segv.c)に対応するGoプログラム。`go build segv.go`でビルドできる
+- [cow](05-memory-management/misc/cow): 是 [cow.c](05-memory-management/cow.c) 对应的 Python 程序。
+- [demand-paging](05-memory-management/misc/demand-paging): 是 [demand-paging.c](05-memory-management/demand-paging.c) 对应的 Python 程序。
+- [mmap.go](05-memory-management/misc/mmap.go): 是 [mmap.c](05-memory-management/mmap.c) 对应的 Go 语言实现，可以使用 `go build mmap.go` 命令进行编译。
+- [filemap.go](05-memory-management/misc/filemap.go): 是 [filemap.c](05-memory-management/filemap.c) 对应的 Go 语言实现，可以使用 `go build filemap.go` 命令进行编译。
+- [segv.go](05-memory-management/misc/segv.go): 是 [segv.c](05-memory-management/segv.c) 对应的 Go 语言实现，可以使用 `go build segv.go` 命令进行编译。
+- [vsz-rss.sh](05-memory-management/misc/vsz-rss.sh)
 
-# 6章
+## 第 6 章
 
-- [cache.go](06-storage-hierarchy/misc/cache.go): [cache.c](06-storage-hierarchy/cache.c)に対応するGoプログラム。`go build cache.go`でビルドできる。
+- [cache.go](06-storage-hierarchy/misc/cache.go): 是 [cache.c](06-storage-hierarchy/cache.c) 对应的 Go 语言实现，可以使用 `go build cache.go` 命令进行编译。
+- [read-twice.sh](06-storage-hierarchy/read-twice.sh)
+- [write.sh](06-storage-hierarchy/write.sh)
 
-以下、cacheプログラムを1CPUコアあたりのL1d,L2,L3キャッシュ容量がそれぞれ32KB,512KB,4MBのCPU上で動かした結果を示すグラフです。
+以下是当 CPU 的 L1d、L2、L3 高速缓存容量分别为 32KB,512KB,4MB 时，cahe 程序运行结果的图表。
 
-![cache.jpg](06-storage-hierarchy/misc/cache.jpg)
+- ![cache.jpg](06-storage-hierarchy/misc/cache.jpg)
+
+## 第 8 章
+
+- [io.c](08-storage-device/io.c)
+
