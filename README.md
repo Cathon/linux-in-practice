@@ -38,7 +38,7 @@ binutils, build-essential, golang, python3-matplotlib, python3-pil, fonts-takao
 - [mmap.go](05-memory-management/misc/mmap.go): 是 [mmap.c](05-memory-management/mmap.c) 对应的 Go 语言实现，可以使用 `go build mmap.go` 命令进行编译。
 - [filemap.go](05-memory-management/misc/filemap.go): 是 [filemap.c](05-memory-management/filemap.c) 对应的 Go 语言实现，可以使用 `go build filemap.go` 命令进行编译。
 - [segv.go](05-memory-management/misc/segv.go): 是 [segv.c](05-memory-management/segv.c) 对应的 Go 语言实现，可以使用 `go build segv.go` 命令进行编译。
-- [vsz-rss.sh](05-memory-management/misc/vsz-rss.sh)
+- [vsz-rss.sh](05-memory-management/vsz-rss.sh)
 
 ## 第 6 章
 
